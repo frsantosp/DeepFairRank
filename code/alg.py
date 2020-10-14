@@ -5,8 +5,7 @@ def tpr_parity_opt(W,y,h_c, norm = 2, rep = 50, solver = 'SCS'):
     n = W.shape[0]
     pos_0 = sub_vec(y,(1- prt_group))
     pos_1 = sub_vec(y, prt_group)
-
-    
+   
     x = cp.Variable(n)
     error = cp.sum_squares(y-x)/cp.sum(y)
     PB = cp.norm(pos_0.T@x - pos_1.T@x, norm)
@@ -20,14 +19,21 @@ def tpr_parity_opt(W,y,h_c, norm = 2, rep = 50, solver = 'SCS'):
     results = list()
     tpr_p = list()
     for val in alpha_vals:
-        print(val,end = ' ')
         alpha.value = val
         prob.solve(solver= solver)#,adaptive_rho_interval = 1)
         h = x.value
-        binarize_numpy(h,acceptance_n)
+        binarize(h,acceptance_n)
         results.append(h)
-        tpg ,_,_,_ = group_fairness_numpy(y, h, prt_group, return_gap = True)
+        tpg ,_,_,_ = group_fairness(y, h, prt_group, return_gap = True)
         tpr_p.append(tpg)
     i = np.argmin(tpr_p)
-    print(' ')
     return results[i]
+
+def binarize(h, idx):
+    indices = np.argsort(h)[::-1]
+    h[indices[:idx]] = 1
+    h[indices[idx:]] = 0
+    
+def sub_vec(a, b):
+    r = a*b
+    return r/np.sum(r)
