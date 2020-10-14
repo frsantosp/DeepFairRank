@@ -1,9 +1,9 @@
 import numpy as np
-from fairness import group_fairness
+from codes.metrics import group_fairness
 import cvxpy as cp
 
 
-def tpr_parity_opt(W,y,h_c, norm = 2, rep = 50, solver = 'SCS'):
+def tpr_parity_opt(W,y,h_c,prt_group, norm = 2, rep = 50, solver = 'SCS'):
     acceptance_n = int(np.sum(h_c))
     n = W.shape[0]
     pos_0 = sub_vec(y,(1- prt_group))
@@ -40,3 +40,4 @@ def binarize(h, idx):
 def sub_vec(a, b):
     r = a*b
     return r/np.sum(r)
+
