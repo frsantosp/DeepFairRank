@@ -21,7 +21,7 @@ def W_gen(adj, y):
                 W[i,j] = 1.0/n
     return W
     
-def load_data( year = 2020, path = '../data/'):    
+def load_data( year = 2020, path = './data/'):    
     data =  pd.read_csv(path + 'ICLR'+str(year)+'.data')
     g = nx.empty_graph(data.shape[0])
     file = open(path + 'ICLR'+str(year)+'.edges', 'r')
@@ -35,3 +35,4 @@ def load_data( year = 2020, path = '../data/'):
     prt_t = np.array(data['top'])
     W = W_gen(adj, y)
     return adj, y, h, prt_f, prt_t, W
+
