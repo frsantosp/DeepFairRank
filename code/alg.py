@@ -1,4 +1,7 @@
 import numpy as np
+from fairness import group_fairness
+import cvxpy as cp
+
 
 def tpr_parity_opt(W,y,h_c, norm = 2, rep = 50, solver = 'SCS'):
     acceptance_n = int(np.sum(h_c))
