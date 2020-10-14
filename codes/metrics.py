@@ -1,5 +1,4 @@
 import numpy as np
-from tabulate import tabulate
 
 def accuracy(h,y):
     return (np.sum(h*y) + np.sum((1-h)*(1-y)))/h.shape[0]
