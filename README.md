@@ -1,5 +1,5 @@
-# Mitigating Perception of Bias in Peer Review Decision Making
-This repository provides a reference implementation of the experiment result related to "Mitigating Perception of Bias in Peer Review Decision Making" paper. 
+# {Mitigating Perception of Bias in Peer-Review Recommendation
+This repository provides a reference implementation of the experiment result related to "{Mitigating Perception of Bias in Peer-Review Recommendation" paper. 
 
 python packages requriments:
 ```shell-script
