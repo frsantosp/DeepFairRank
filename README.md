@@ -9,4 +9,6 @@ cvxpy
 pandas
 sklearn
 tqdm
+fairsearchcore
+aif360
 ```
