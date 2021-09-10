@@ -7,4 +7,6 @@ networkx
 numpy
 cvxpy
 pandas
+sklearn
+tqdm
 ```
