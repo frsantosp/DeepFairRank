@@ -12,4 +12,5 @@ tqdm
 fairsearchcore
 aif360
 Graph_Sampling
+cvxopt
 ```
