@@ -1,0 +1,10 @@
+networkx
+numpy
+cvxpy
+pandas
+scikit-learn
+tqdm
+fairsearchcore
+cvxopt
+scipy
+jupyter
