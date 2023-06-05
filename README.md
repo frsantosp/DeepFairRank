@@ -7,10 +7,10 @@ networkx
 numpy
 cvxpy
 pandas
-sklearn
+scikit-learn
 tqdm
 fairsearchcore
-aif360
-Graph_Sampling
 cvxopt
+scipy
+jupyter
 ```
