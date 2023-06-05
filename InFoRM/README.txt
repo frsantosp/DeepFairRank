@@ -1,0 +1,1 @@
+You should download the source code from https://github.com/jiank2/inform
